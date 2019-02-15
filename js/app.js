@@ -78,35 +78,49 @@ var centerUL = document.getElementById('center');
 var hillUL = document.getElementById('hill');
 var alkiUL = document.getElementById('alki');
 
-var firstAndPike {
-    minCust:
-    maxCust:
-    avrNumCookies:
+function random () {
+    Math.floor(Math.random() * (maxCust+minCust)) + minCust)
+
 }
+
+var firstAndPike {
+    minCust: 23,
+    maxCust: 65,
+    avrNumCookies: 6.3,
+    render: function () {
+        for(var i = 0; i < days.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${random ()} salmon cookies.`;
+            pikeUl.appendChild(liEl);  
+    }
+}
+};
 
 var seaTac {
-    minCust:
-    maxCust:
-    avrNumCookies:  
-}
+    minCust: 3,
+    maxCust: 24,
+    avrNumCookies: 1.2, 
+};
 
 var seattleCenter {
-    minCust:
-    maxCust:
-    avrNumCookies:
-}
+    minCust: 11,
+    maxCust: 38,
+    avrNumCookies: 3.7,
+};
 
 var capitolHill {
-    minCust:
-    maxCust:
-    avrNumCookies:
-}
+    minCust: 20,
+    maxCust: 38,
+    avrNumCookies: 2.3,
+};
 
 var alkiBeach {
-    minCust:
-    maxCust:
-    avrNumCookies:
-}
+    minCust: 2,
+    maxCust: 16
+    avrNumCookies: 4.6,
+};
+
+first.render ();
 
 // Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 
