@@ -23,11 +23,13 @@ var firstAndPike = {
         for(var i = 0; i < hours.length; i++) {
             totalArray.push(this.cookies());
             counter += totalArray[i];
-            console.log(counter);
             var liEl = document.createElement('li');
             liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             pikeUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        pikeUl.appendChild(liTotal);
     },
 };
 
@@ -52,6 +54,9 @@ var seaTac = {
             liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             seatacUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        seatacUl.appendChild(liTotal);
     },
 };
 
@@ -76,6 +81,9 @@ var seattleCenter = {
             liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             centerUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        centerUl.appendChild(liTotal);
     },
 };
 
@@ -100,6 +108,9 @@ var capitolHill = {
             liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             hillUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        hillUl.appendChild(liTotal);
     },
 };
 
@@ -124,6 +135,9 @@ var alkiBeach = {
             liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             alkiUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        alkiUl.appendChild(liTotal);
     },
 };
 
