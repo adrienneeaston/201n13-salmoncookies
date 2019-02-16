@@ -37,6 +37,7 @@ var seaTac = {
         return numCookies;
     },
     render: function () {
+        
         for(var i = 0; i < hours.length; i++) {
             var liEl = document.createElement('li');
             liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
@@ -60,7 +61,6 @@ var seattleCenter = {
             var liEl = document.createElement('li');
             liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
             centerUl.appendChild(liEl);  
-            console.log(cookiesArray);
         }
     },
 };
