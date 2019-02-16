@@ -1,82 +1,96 @@
 'use strict';
 
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
 
-// var hours = ['6am:', '7am;', '8am:', '9am:', '10am:', '11am:', '12pm:', '1pm:', '2pm:', '3pm:', '4pm:', '5pm:', '6pm:', '7pm:', '8pm:',];
-
-// var pikeUL = document.getElementById('pike');
-// var seatacUL = document.getElementById('seatac');
-// var centerUL = document.getElementById('center');
-// var hillUL = document.getElementById('hill');
-// var alkiUL = document.getElementById('alki');
+var pikeUl = document.getElementById('pike');
+var seatacUl = document.getElementById('seatac');
+var centerUl = document.getElementById('center');
+var hillUl = document.getElementById('hill');
+var alkiUl = document.getElementById('alki');
 
 var firstAndPike = {
     minCust: 23,
     maxCust: 65,
     avrNumCookies: 6.3,
-    render: function () {
+    cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-        console.log(ranNum);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-        console.log(numCookies);
-    } 
+    },
+    render: function () {
+        for(var i = 0; i < hours.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            pikeUl.appendChild(liEl);  
+        }
+    },
 };
-
-//     render: function () {
-//         for(var i = 0; i < days.length; i++) {
-//             var liEl = document.createElement('li');
-//             liEl.textContent = `${hours[i]}: ${random ()} salmon cookies.`;
-//             pikeUl.appendChild(liEl);  
-//     }
-// }
-// };
 
 var seaTac = {
     minCust: 3,
     maxCust: 24,
     avrNumCookies: 1.2, 
-    render: function () {
+    cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-        console.log(ranNum);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-        console.log(numCookies);
-    } 
+    },
+    render: function () {
+        for(var i = 0; i < hours.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            seatacUl.appendChild(liEl);  
+        }
+    },
 };
 
 var seattleCenter = {
     minCust: 11,
     maxCust: 38,
     avrNumCookies: 3.7,
-    render: function () {
+    cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-        console.log(ranNum);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-        console.log(numCookies);
-    } 
+    },
+    render: function () {
+        for(var i = 0; i < hours.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            centerUl.appendChild(liEl);  
+        }
+    },
 };
 
 var capitolHill = {
     minCust: 20,
     maxCust: 38,
     avrNumCookies: 2.3,
-    render: function () {
+    cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-        console.log(ranNum);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-        console.log(numCookies);
-    } 
+    },
+    render: function () {
+        for(var i = 0; i < hours.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            hillUl.appendChild(liEl);  
+        }
+    },
 };
 
 var alkiBeach = {
     minCust: 2,
     maxCust: 16,
     avrNumCookies: 4.6,
-    render: function () {
+    cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-        console.log(ranNum);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-        console.log(numCookies);
-    } 
+    },
+    render: function () {
+        for(var i = 0; i < hours.length; i++) {
+            var liEl = document.createElement('li');
+            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            alkiUl.appendChild(liEl);  
+        }
+    },
 };
 
 firstAndPike.render();
@@ -85,7 +99,7 @@ seattleCenter.render();
 capitolHill.render();
 alkiBeach.render();
 
-// first.render ();
+// Stores the min/max hourly customers, and the average cookies per customer, in object properties
 
 // Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
 
