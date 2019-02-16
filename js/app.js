@@ -15,6 +15,7 @@ var firstAndPike = {
     cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+        return numCookies;
     },
     render: function () {
         for(var i = 0; i < hours.length; i++) {
@@ -25,6 +26,7 @@ var firstAndPike = {
     },
 };
 
+
 var seaTac = {
     minCust: 3,
     maxCust: 24,
@@ -32,6 +34,7 @@ var seaTac = {
     cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+        return numCookies;
     },
     render: function () {
         for(var i = 0; i < hours.length; i++) {
@@ -42,6 +45,7 @@ var seaTac = {
     },
 };
 
+
 var seattleCenter = {
     minCust: 11,
     maxCust: 38,
@@ -49,15 +53,18 @@ var seattleCenter = {
     cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+        return numCookies;
     },
     render: function () {
         for(var i = 0; i < hours.length; i++) {
             var liEl = document.createElement('li');
             liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
             centerUl.appendChild(liEl);  
+            console.log(cookiesArray);
         }
     },
 };
+
 
 var capitolHill = {
     minCust: 20,
@@ -66,6 +73,7 @@ var capitolHill = {
     cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+        return numCookies;
     },
     render: function () {
         for(var i = 0; i < hours.length; i++) {
@@ -76,6 +84,7 @@ var capitolHill = {
     },
 };
 
+
 var alkiBeach = {
     minCust: 2,
     maxCust: 16,
@@ -83,6 +92,7 @@ var alkiBeach = {
     cookies: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+        return numCookies;
     },
     render: function () {
         for(var i = 0; i < hours.length; i++) {
