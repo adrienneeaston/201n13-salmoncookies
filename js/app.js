@@ -18,9 +18,14 @@ var firstAndPike = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             pikeUl.appendChild(liEl);  
         }
     },
@@ -37,10 +42,14 @@ var seaTac = {
         return numCookies;
     },
     render: function () {
-        
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             seatacUl.appendChild(liEl);  
         }
     },
@@ -57,9 +66,14 @@ var seattleCenter = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             centerUl.appendChild(liEl);  
         }
     },
@@ -76,9 +90,14 @@ var capitolHill = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             hillUl.appendChild(liEl);  
         }
     },
@@ -95,9 +114,14 @@ var alkiBeach = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             alkiUl.appendChild(liEl);  
         }
     },
