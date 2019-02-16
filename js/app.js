@@ -18,11 +18,18 @@ var firstAndPike = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             pikeUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        pikeUl.appendChild(liTotal);
     },
 };
 
@@ -37,11 +44,19 @@ var seaTac = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             seatacUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        seatacUl.appendChild(liTotal);
     },
 };
 
@@ -56,12 +71,19 @@ var seattleCenter = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             centerUl.appendChild(liEl);  
-            console.log(cookiesArray);
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        centerUl.appendChild(liTotal);
     },
 };
 
@@ -76,11 +98,19 @@ var capitolHill = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             hillUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        hillUl.appendChild(liTotal);
     },
 };
 
@@ -95,11 +125,19 @@ var alkiBeach = {
         return numCookies;
     },
     render: function () {
+        var totalArray = [];
+        var counter = 0
         for(var i = 0; i < hours.length; i++) {
+            totalArray.push(this.cookies());
+            counter += totalArray[i];
+            console.log(counter);
             var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${this.cookies ()} salmon cookies.`;
+            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
             alkiUl.appendChild(liEl);  
         }
+        var liTotal = document.createElement('li');
+        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        alkiUl.appendChild(liTotal);
     },
 };
 
@@ -108,17 +146,3 @@ seaTac.render();
 seattleCenter.render();
 capitolHill.render();
 alkiBeach.render();
-
-// Stores the min/max hourly customers, and the average cookies per customer, in object properties
-
-// Uses a method of that object to generate a random number of customers per hour. Objects/Math/random
-
-// Calculate and store the simulated amounts of cookies purchased for each hour at each location using average cookies purchased and the random number of customers generated
-
-// Store the results for each location in a separate array... perhaps as a property of the object representing that location
-
-// Display the values of each array as unordered lists in the browser
-
-// Calculating the sum of these hourly totals; your output for each location should look like this:
-
-// Display the lists on sales.html.
