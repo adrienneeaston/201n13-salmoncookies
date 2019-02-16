@@ -17,7 +17,7 @@ var firstAndPike = {
     render: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         console.log(ranNum);
-        var numCookies = ranNum * this.avrNumCookies;
+        var numCookies = Math.ceil(ranNum * this.avrNumCookies);
         console.log(numCookies);
     } 
 };
@@ -38,7 +38,7 @@ var seaTac = {
     render: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         console.log(ranNum);
-        var numCookies = ranNum * this.avrNumCookies;
+        var numCookies = Math.ceil(ranNum * this.avrNumCookies);
         console.log(numCookies);
     } 
 };
@@ -50,7 +50,7 @@ var seattleCenter = {
     render: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         console.log(ranNum);
-        var numCookies = ranNum * this.avrNumCookies;
+        var numCookies = Math.ceil(ranNum * this.avrNumCookies);
         console.log(numCookies);
     } 
 };
@@ -62,7 +62,7 @@ var capitolHill = {
     render: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         console.log(ranNum);
-        var numCookies = ranNum * this.avrNumCookies;
+        var numCookies = Math.ceil(ranNum * this.avrNumCookies);
         console.log(numCookies);
     } 
 };
@@ -74,7 +74,7 @@ var alkiBeach = {
     render: function () {
         var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
         console.log(ranNum);
-        var numCookies = ranNum * this.avrNumCookies;
+        var numCookies = Math.ceil(ranNum * this.avrNumCookies);
         console.log(numCookies);
     } 
 };
