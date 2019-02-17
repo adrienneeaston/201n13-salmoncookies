@@ -9,15 +9,18 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.maxCust = maxCust;
   this.avrNumCookies = avrNumCookies;
   this.totalArray = [];
+  this.counter = 0
   this.cookiesPerHour = function() {
     var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
     return Math.ceil(ranNum * this.avrNumCookies);
   }
   this.total = function() {
-    var counter = 0
     for(var i = 0; i < hours.length; i++) {
       this.totalArray.push(this.cookiesPerHour());
-      this.counter += this.totalArray[i];
+  }
+  this.cookiesPerDay = function() {
+    for(var i = 0; i < totalArray.length; i++)
+    counter += this.totalArray[i];
   }
 }
 };
@@ -26,7 +29,7 @@ var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
 console.log(firstAndPike.cookiesPerHour());
 firstAndPike.total();
 console.log(firstAndPike.totalArray);
-console.log(firstAndPike.counter);
+console.log(firstAndPike.cookiesPerDay());
 
 var seatac = new Locations ('SeaTac', 3, 24, 1.2);
 
