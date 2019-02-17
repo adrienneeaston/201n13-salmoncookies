@@ -8,32 +8,25 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avrNumCookies = avrNumCookies;
+  this.totalArray = [];
   this.cookiesPerHour = function() {
-    return minCust * avrNumCookies;
+    var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+    return Math.ceil(ranNum * this.avrNumCookies);
   }
-  // this.cookiesPerHour = function cookiesPerHour() {
-  //   var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-  //   var numCookies = Math.ceil(ranNum * this.avrNumCookies);
-  //   return numCookies;
-  // };
-  // this.total = function () {
-  //   var totalArray = [];
-  //   var counter = 0
-  //   for(var i = 0; i < hours.length; i++) {
-  //     totalArray.push(this.cookiesPerHour());
-  //     counter += totalArray[i];
-      // console.log(totalArray);
-    //   var liEl = document.createElement('li');
-    //   liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
-    //   pikeUl.appendChild(liEl);  
-    // }
-    // var liTotal = document.createElement('li');
-    //   liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
-    //   pikeUl.appendChild(liTotal);
+  this.total = function() {
+    var counter = 0
+    for(var i = 0; i < hours.length; i++) {
+      this.totalArray.push(this.cookiesPerHour());
+      this.counter += this.totalArray[i];
+  }
+}
 };
-  
+
 var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
 console.log(firstAndPike.cookiesPerHour());
+firstAndPike.total();
+console.log(firstAndPike.totalArray);
+console.log(firstAndPike.counter);
 
 var seatac = new Locations ('SeaTac', 3, 24, 1.2);
 
@@ -48,6 +41,21 @@ console.log(seatac);
 console.log(seattleCenter);
 console.log(capitolHill);
 console.log(alkiBeach);
+
+  // this.cookiesPerHour = function cookiesPerHour() {
+  //   var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+  //   var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+  //   return numCookies;
+  // };
+
+      // console.log(totalArray);
+    //   var liEl = document.createElement('li');
+    //   liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+    //   pikeUl.appendChild(liEl);  
+    // }
+    // var liTotal = document.createElement('li');
+    //   liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+    //   pikeUl.appendChild(liTotal);
 
 
 // for (var i=0; i < people.length; i++) {
