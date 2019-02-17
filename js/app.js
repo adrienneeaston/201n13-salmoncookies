@@ -19,8 +19,9 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
       this.totalArray.push(this.cookiesPerHour());
   }
   this.cookiesPerDay = function() {
-    for(var i = 0; i < totalArray.length; i++)
-    counter += this.totalArray[i];
+    for(var i = 0; i < this.totalArray.length; i++)
+    this.counter += this.totalArray[i];
+    return this.counter;
   }
 }
 };
