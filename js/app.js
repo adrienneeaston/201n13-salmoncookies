@@ -2,6 +2,7 @@
 
 var table = document.getElementById('shell');
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
+var data = [];
 
 function Locations (store, minCust, maxCust, avrNumCookies) {
   this.store = store;
@@ -43,6 +44,22 @@ var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
 var capitolHill = new Locations ('Captiol Hill', 20, 38, 2.3);
 
 var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
+
+for (var i=1; i < Locations.length; i++) {
+  data.push(
+    '<td>' + Locations[i].name + '</td>' +
+    '<td>' + Locations[i].age + '</td>' +
+    '<td>' + Locations[i].profession + '</td>'
+  )
+}
+
+console.log('my data array:', data);
+
+for (var j = 0; j < data.length; j++) {
+  var newRow = document.createElement('tr');
+  newRow.innerHTML = data[j];
+  table.appendChild(newRow);
+}
 
 
 
