@@ -9,7 +9,7 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.maxCust = maxCust;
   this.avrNumCookies = avrNumCookies;
   this.totalArray = [];
-  this.counter = 0
+  this.counter = 0;
   this.cookiesPerHour = function() {
     var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
     return Math.ceil(ranNum * this.avrNumCookies);
@@ -33,6 +33,10 @@ console.log(firstAndPike.totalArray);
 console.log(firstAndPike.cookiesPerDay());
 
 var seatac = new Locations ('SeaTac', 3, 24, 1.2);
+console.log(seatac.cookiesPerHour());
+console.log(seatac.total());
+console.log(seatac.totalArray);
+console.log(seatac.cookiesPerDay());
 
 var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
 
@@ -40,11 +44,7 @@ var capitolHill = new Locations ('Captiol Hill', 20, 38, 2.3);
 
 var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
 
-console.log(firstAndPike);
-console.log(seatac);
-console.log(seattleCenter);
-console.log(capitolHill);
-console.log(alkiBeach);
+
 
   // this.cookiesPerHour = function cookiesPerHour() {
   //   var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
