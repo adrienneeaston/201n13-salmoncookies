@@ -28,16 +28,8 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
 };
 
 var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
-console.log(firstAndPike.cookiesPerHour());
-firstAndPike.total();
-console.log(firstAndPike.totalArray);
-console.log(firstAndPike.cookiesPerDay());
 
 var seatac = new Locations ('SeaTac', 3, 24, 1.2);
-console.log(seatac.cookiesPerHour());
-console.log(seatac.total());
-console.log(seatac.totalArray);
-console.log(seatac.cookiesPerDay());
 
 var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
 
@@ -45,21 +37,23 @@ var capitolHill = new Locations ('Captiol Hill', 20, 38, 2.3);
 
 var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
 
-for (var i=1; i < Locations.length; i++) {
-  data.push(
-    '<td>' + Locations[i].name + '</td>' +
-    '<td>' + Locations[i].age + '</td>' +
-    '<td>' + Locations[i].profession + '</td>'
-  )
-}
 
-console.log('my data array:', data);
 
-for (var j = 0; j < data.length; j++) {
-  var newRow = document.createElement('tr');
-  newRow.innerHTML = data[j];
-  table.appendChild(newRow);
-}
+// for (var i=1; i < Locations.length; i++) {
+//   data.push(
+//     '<td>' + Locations[i].name + '</td>' +
+//     '<td>' + Locations[i].age + '</td>' +
+//     '<td>' + Locations[i].profession + '</td>'
+//   )
+// }
+
+// console.log('my data array:', data);
+
+// for (var j = 0; j < data.length; j++) {
+//   var newRow = document.createElement('tr');
+//   newRow.innerHTML = data[j];
+//   table.appendChild(newRow);
+// }
 
 
 
