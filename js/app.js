@@ -1,8 +1,12 @@
 'use strict';
 
-var table = document.getElementById('shell');
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
-var data = [];
+
+var pikeTr = document.getElementById('pike');
+var seatacTr = document.getElementById('seatac');
+var centerTr = document.getElementById('center');
+var hillTr = document.getElementById('hill');
+var alkiTr = document.getElementById('alki');
 
 function Locations (store, minCust, maxCust, avrNumCookies) {
   this.store = store;
@@ -20,24 +24,44 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
       this.totalArray.push(this.cookiesPerHour());
   }
   this.cookiesPerDay = function() {
-    for(var i = 0; i < this.totalArray.length; i++)
-    this.counter += this.totalArray[i];
+    this.total();
+    for(var i = 0; i < this.totalArray.length; i++) {
+      this.counter += this.totalArray[i];
+    }
     return this.counter;
+  }
+  this.render = function() {
+    this.cookiesPerDay();
+    for (var i = 0; i < this.totalArray.length; i++) {
+      var newData = document.createElement('td');
+      newData.textContent(this.totalArray[i]);
+      td.appendChild(newData)
+    }
   }
 }
 };
 
 var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
-
 var seatac = new Locations ('SeaTac', 3, 24, 1.2);
-
 var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
-
-var capitolHill = new Locations ('Captiol Hill', 20, 38, 2.3);
-
+var capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
 var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
 
+seatac.cookiesPerHour();
+seatac.total();
+seatac.cookiesPerDay();
+seatac.render();
 
+
+
+
+
+
+//run the functions above for each store
+//store that data in an array
+//access those arrays create new elements
+//to designate what goes in each element
+//to append to appropriate elements and HTML
 
 // for (var i=1; i < Locations.length; i++) {
 //   data.push(
