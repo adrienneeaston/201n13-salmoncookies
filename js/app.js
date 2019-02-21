@@ -1,7 +1,14 @@
 'use strict';
 
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+//Pulling table id from HTML 
+
 var tableOfStores = document.getElementById('shell');
+
+//creating array to store hours of day
+
+var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm'];
+
+//Constructor function
 
 function Locations(store, minCust, maxCust, avgCookiesPerCust, id) {
   this.store = store; 
@@ -12,6 +19,9 @@ function Locations(store, minCust, maxCust, avgCookiesPerCust, id) {
   this.custPerHour = [];
   this.cookiesPerHour = [];
   this.counter = 0;
+
+  //calculates cookies per hour
+
   this.calcCustomersEachHour = function() {
     for (var i = 0; i < hours.length; i++) {
       this.custPerHour.push(random(this.minCust, this.maxCust));
@@ -27,11 +37,13 @@ function Locations(store, minCust, maxCust, avgCookiesPerCust, id) {
   };
 }
 
+//creates table data for total cookies each hour
+
 this.render = function() {
   this.calcCookiesEachHour();
   var trEl = document.createElement('tr');
   var tdEl = document.createElement('td');
-  tdEl.textContent = this.locationName;
+  tdEl.textContent = this.store;
   trEl.appendChild(tdEl);
 
   for (var i = 0; i < hours.length; i++) {
@@ -52,7 +64,6 @@ function random(min, max) {
 
 function makeHeaderRow() {
   var trEl = document.createElement('tr');
-  
   var thEl = document.createElement('th');
   thEl.textContent = 'Locations';
   trEl.appendChild(thEl);
@@ -64,7 +75,7 @@ function makeHeaderRow() {
   }
 
   thEl = document.createElement('th');
-  thEl.textContent = 'Location Totals';
+  thEl.textContent = 'Total Cookies';
   trEl.appendChild(thEl);
   tableOfStores.appendChild(trEl);
 }
@@ -76,6 +87,8 @@ var capitolHill = new Locations('Capitol Hill', 20, 38, 2.3, 'hill');
 var alki = new Locations('Alki', 2, 16, 4.6, 'alki');
 
 var allShops = [firstandpike, seatac, seattleCenter, capitolHill, alki];
+
+
 
 (function renderTable() {
   makeHeaderRow();
