@@ -23,12 +23,12 @@ var firstAndPike = {
         for(var i = 0; i < hours.length; i++) {
             totalArray.push(this.cookies());
             counter += totalArray[i];
-            var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+            var liEl = document.createElement('td');
+            liEl.innerHTML = totalArray[i];
             pikeUl.appendChild(liEl);  
         }
-        var liTotal = document.createElement('li');
-        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        var liTotal = document.createElement('td');
+        liTotal.innerHTML = counter;
         pikeUl.appendChild(liTotal);
     },
 };
@@ -50,12 +50,12 @@ var seaTac = {
             totalArray.push(this.cookies());
             counter += totalArray[i];
             console.log(counter);
-            var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+            var liEl = document.createElement('td');
+            liEl.innerHTML = totalArray[i];
             seatacUl.appendChild(liEl);  
         }
-        var liTotal = document.createElement('li');
-        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        var liTotal = document.createElement('td');
+        liTotal.innerHTML = counter;
         seatacUl.appendChild(liTotal);
     },
 };
@@ -77,12 +77,12 @@ var seattleCenter = {
             totalArray.push(this.cookies());
             counter += totalArray[i];
             console.log(counter);
-            var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+            var liEl = document.createElement('td');
+            liEl.innerHTML = totalArray[i];
             centerUl.appendChild(liEl);  
         }
-        var liTotal = document.createElement('li');
-        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        var liTotal = document.createElement('td');
+        liTotal.innerHTML = counter;
         centerUl.appendChild(liTotal);
     },
 };
@@ -104,12 +104,12 @@ var capitolHill = {
             totalArray.push(this.cookies());
             counter += totalArray[i];
             console.log(counter);
-            var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+            var liEl = document.createElement('td');
+            liEl.innerHTML = totalArray[i];
             hillUl.appendChild(liEl);  
         }
-        var liTotal = document.createElement('li');
-        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        var liTotal = document.createElement('td');
+        liTotal.innerHTML = counter;
         hillUl.appendChild(liTotal);
     },
 };
@@ -131,21 +131,21 @@ var alkiBeach = {
             totalArray.push(this.cookies());
             counter += totalArray[i];
             console.log(counter);
-            var liEl = document.createElement('li');
-            liEl.textContent = `${hours[i]}: ${totalArray[i]} salmon cookies.`;
+            var liEl = document.createElement('td');
+            liEl.innerHTML = totalArray[i];
             alkiUl.appendChild(liEl);  
         }
-        var liTotal = document.createElement('li');
-        liTotal.textContent = `TOTAL DAILY COOKIES: ${counter}`;
+        var liTotal = document.createElement('td');
+        liTotal.innerHTML = counter;
         alkiUl.appendChild(liTotal);
     },
 };
 
 firstAndPike.render();
-// seaTac.render();
-// seattleCenter.render();
-// capitolHill.render();
-// alkiBeach.render();
+seaTac.render();
+seattleCenter.render();
+capitolHill.render();
+alkiBeach.render();
 
 // Stores the min/max hourly customers, and the average cookies per customer, in object properties
 
