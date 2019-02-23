@@ -7,6 +7,7 @@ var seatacUl = document.getElementById('seatac');
 var centerUl = document.getElementById('center');
 var hillUl = document.getElementById('hill');
 var alkiUl = document.getElementById('alki');
+var footer = document.getElementById('footer');
 
 //Constructor function
 
@@ -41,6 +42,44 @@ function Locations (store, minCust, maxCust, avrNumCookies, id) {
 }
 };
 
+// Jeff's code review
+
+// var allShops = [firstandpike, seatac, seattleCenter, capitolHill, alki];
+
+// function makeFooterRow() {
+//     var trEl =document.createElement('tr');
+//     var theEL = documnet.createElement('th');
+//     theEL.textContent = 'Hourly Totals for all Locations';
+//     trEl.appendChild(thEl);
+
+//     var totalOfHours = 0;
+//     var hourlyTotal = 0;
+
+//     for (var i = 0; i <hours.length; i++) {
+
+//         hourlyTotal = 0;
+
+//         for (var j = 0; j < allShops.length; j++) {
+//             hourlyTotal += allShops[j].cookiesPerHour[i];
+//             totalsOfTotals += allShops[j].cookiesPerHour[i];
+//         }
+
+//     theEl = document.createElement('th');
+//     thEl.textContent = hourlyTotal;
+//     trEl.appendChild(thEl);
+
+//     }
+
+// thEl = document.createElement('th');
+// thEl.textContent = totalOfTotals;
+// trEl.appendChild(trEl);
+
+// footer.appendChild(trEl);
+
+// }
+
+//end of Jeff's code review and then calling function below
+
 var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3, pikeUl);
 var seatac = new Locations ('SeaTac', 3, 24, 1.2, seatacUl);
 var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7, centerUl);
@@ -52,6 +91,7 @@ seatac.render();
 seattleCenter.render();
 capitolHill.render();
 alkiBeach.render();
+// allShops();
 
 // var firstAndPike = {
 //     minCust: 23,
