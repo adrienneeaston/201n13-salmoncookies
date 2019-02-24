@@ -8,8 +8,7 @@ var allStores = [];
 
 //Constructor function
 
-function Locations (store, minCust, maxCust, avrNumCookies) {
-  this.store = store;
+function Locations (minCust, maxCust, avrNumCookies) {
   this.minCust = minCust;
   this.maxCust = maxCust;
   this.avrNumCookies = avrNumCookies;
@@ -18,28 +17,61 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.counter = 0;
   allStores.push(this);
 
+  this.cookies = function () {
+    var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+    var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+    return numCookies;
+
+  this.makeArray = function() {
+    for(var i = 0; i < hours.length; i++) {
+      this.totalArray.push(this.cookies());
+      this.counter += this.totalArray[i];
+  }
+
 // creates data table
 
   this.render = function () {
-    cookies();
-    tableRows();    
+      for (var i = 0; i < allStores.length; i++);
+      var trEl = document.createElement('tr');
+      var tdEl = document.createElement('td');
+      tdEl.innerHTML = allStores[i];
+      trEl.appendChild(tdEl);
+    
+      for(var j = 0; j < hours.length; j++) {
+        console.log('Hello for loop!');
+        var counter = 0;
+        totalArray.push(cookies());
+        console.log(this);
+        counter += totalArray[j];
+        var tdEl = document.createElement('td');
+        tdEl.innerHTML = totalArray[j];
+        trEl.appendChild(tdEl);  
+        }
+        var tdEl = document.createElement('td');
+        tdEl.innerHTML = counter;
+        trEl.appendChild(tdEl);
+    
+        table.appendChild(trEl);
+      };  
 }
 };
 
-var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
-var seatac = new Locations ('SeaTac', 3, 24, 1.2);
-var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
-var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
+//Creating the stores/objects
+
+var firstAndPike = new Locations (23, 65, 6.3);
+var seatac = new Locations (3, 24, 1.2);
+var seattleCenter = new Locations (11, 38, 3.7);
+var capitolHill = new Locations (20, 38, 2.3);
+var alkiBeach = new Locations (2, 16, 4.6);
 
 
 // Random number generator
 
-function cookies(minCust, maxCust, avrNumCookies) {
-  var ranNum = Math.floor((Math.random() * (maxCust - minCust + 1)) + minCust);
-  var numCookies = Math.ceil(ranNum * avrNumCookies);
-  return numCookies;
-};
+// function cookies(minCust, maxCust, avrNumCookies) {
+//   var ranNum = Math.floor((Math.random() * (maxCust - minCust + 1)) + minCust);
+//   var numCookies = Math.ceil(ranNum * avrNumCookies);
+//   return numCookies;
+// };
 
 // header
 
@@ -64,36 +96,12 @@ function headerRow() {
 
 // table data
 
-function tableRows() {
-  console.log('Hello tableRows!');
-  var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
-  tdEl.innerHTML = this.store;
-  trEl.appendChild(tdEl);
-
-  for(var j = 0; j < hours.length; j++) {
-    console.log('Hello for loop!');
-    var totalArray = [];
-    var counter = 0;
-    totalArray.push(cookies());
-    counter += totalArray[j];
-    var tdEl = document.createElement('td');
-    tdEl.innerHTML = totalArray[j];
-    trEl.appendChild(tdEl);  
-    }
-    var tdEl = document.createElement('td');
-    tdEl.innerHTML = counter;
-    trEl.appendChild(tdEl);
-
-    table.appendChild(trEl);
-  };
-
 headerRow();
-// firstAndPike.render();
-// seatac.render();
-// seattleCenter.render();
-// capitolHill.render();
-// alkiBeach.render();
+firstAndPike.render();
+seatac.render();
+seattleCenter.render();
+capitolHill.render();
+alkiBeach.render();
 
 // functional for hard coded stores
     // for(var i = 0; i < hours.length; i++) {
