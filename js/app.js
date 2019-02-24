@@ -4,7 +4,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var table = document.getElementById('table');
 
-var allStores = [];
+// var allStores = []; // might be useful later
 
 //Constructor function
 
@@ -16,7 +16,7 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.cookiesPerHour = [];
   this.totalArray = [];
   this.counter = 0;
-  allStores.push(this);
+  // allStores.push(this); // might be useful later
 
   this.cookies = function () {
     var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
