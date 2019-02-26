@@ -1,0 +1,67 @@
+body {
+    width: 100%;
+    margin: auto;
+    background-color: peachpuff;
+}
+
+header {
+    height: 100px;
+    background-color: rgb(247, 156, 76);
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+}
+
+main {
+    width: 960px;
+    margin: 0 auto;
+}
+
+footer {
+    height: 100px;
+    background-color: rgb(247, 156, 76);
+    clear: both;
+}
+
+#logoimg {
+    margin: 15px;
+    outline: solid;
+}
+
+#nav1, #nav2, #nav3, #nav4 {
+    text-align: center;
+    display: inline-block;
+    width: 200px;
+}
+
+#heroimg {
+  margin: 15px 0px 15px 0px;
+}
+
+#trio1, #trio2, #trio3 {
+    width: 300px;
+    float: left;
+}
+
+#trio1 {
+    margin: 15px 15px 15px 0px;
+}
+
+#trio2 {
+    margin: 15px;
+}
+
+#trio3 {
+    margin: 15px 0px 15px 15px;
+}
+
+#featuredimg {
+    float: left;
+    margin: 15px 15px 15px 0px;
+}
+
+div {
+    width: 450px;
+    float: left;
+    margin: 15px 0px 15px 15px;
+}
