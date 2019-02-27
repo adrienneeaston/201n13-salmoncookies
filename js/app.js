@@ -4,7 +4,7 @@ var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '
 
 var table = document.getElementById('table');
 
-// var allStores = []; // might be useful later
+var allStores = []; // might be useful later
 
 //Constructor function
 
@@ -16,7 +16,7 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   this.cookiesPerHour = [];
   this.totalArray = [];
   this.counter = 0;
-  // allStores.push(this); // might be useful later
+  allStores.push(this); // might be useful later
 
   this.cookies = function () {
     var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
@@ -98,6 +98,30 @@ function headerRow() {
 
 function footerRow() {
   console.log('Hello footerRow!');
+}
+
+function footerRow() {
+  var trEl = document.createElement('tr');
+  var thEl = document.createElement('th');
+  thEl.textContent = 'Hourly Totals';
+  trEl.appendChild(thEl);
+  var counterHourly = 0;
+  var counterDaily = 0;
+
+  for (var i = 0; i < hours.length; i++) {
+    counterHourly = 0;
+    for (var j = 0; j < allStores.lengths; j++) {
+      counterHourly += allStores[j].cookiesPerHour[i];
+      counterDaily += allStores[j].cookiesPerHour[i];
+    }
+    thEl = document.createElement('th');
+    thEl.textContent = counterHourly;
+    trEl.appendChild(thEl);
+  }
+  thEl = document.createElement('th');
+  thEl.textContent = counterDaily;
+  trEl.appendChild(thEl);
+  table.appendChild(trEl);
 }
 
 // table data
