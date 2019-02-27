@@ -98,9 +98,9 @@ function headerRow() {
 
 function footerRow() {
   var trEl = document.createElement('tr');
-  var thEl = document.createElement('th');
-  thEl.textContent = 'Hourly Totals';
-  trEl.appendChild(thEl);
+  var tdEl = document.createElement('td');
+  tdEl.textContent = 'Hourly Totals';
+  trEl.appendChild(tdEl);
   var counterHourly = 0;
   var counterDaily = 0;
   for (var i = 0; i < hours.length; i++) {
@@ -109,13 +109,13 @@ function footerRow() {
       counterHourly += allStores[j].totalArray[i];
       counterDaily += allStores[j].totalArray[i];
     }
-    thEl = document.createElement('th');
-    thEl.textContent = counterHourly;
-    trEl.appendChild(thEl);
+    tdEl = document.createElement('td');
+    tdEl.textContent = counterHourly;
+    trEl.appendChild(tdEl);
   }
-  thEl = document.createElement('th');
-  thEl.textContent = counterDaily;
-  trEl.appendChild(thEl);
+  tdEl = document.createElement('td');
+  tdEl.textContent = counterDaily;
+  trEl.appendChild(tdEl);
   table.appendChild(trEl);
 }
 
