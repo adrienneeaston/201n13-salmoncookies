@@ -97,22 +97,17 @@ function headerRow() {
 // footer row
 
 function footerRow() {
-  console.log('Hello footerRow!');
-}
-
-function footerRow() {
   var trEl = document.createElement('tr');
   var thEl = document.createElement('th');
   thEl.textContent = 'Hourly Totals';
   trEl.appendChild(thEl);
   var counterHourly = 0;
   var counterDaily = 0;
-
   for (var i = 0; i < hours.length; i++) {
     counterHourly = 0;
-    for (var j = 0; j < allStores.lengths; j++) {
-      counterHourly += allStores[j].cookiesPerHour[i];
-      counterDaily += allStores[j].cookiesPerHour[i];
+    for (var j = 0; j < allStores.length; j++) {
+      counterHourly += allStores[j].totalArray[i];
+      counterDaily += allStores[j].totalArray[i];
     }
     thEl = document.createElement('th');
     thEl.textContent = counterHourly;
