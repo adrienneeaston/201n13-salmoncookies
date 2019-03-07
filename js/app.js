@@ -133,12 +133,6 @@ function addStore(event) {
     event.target.maxCustFs.value = null;
     event.target.avrCookiesFs.value = null;
 
-    // allStores.unshift(newLocation);
-    // newLocation.render();
-    // renderAllStores();
-
-    // table.removeChild(table.childNodes);
-
     table.innerHTML = '';
 
     headerRow();
