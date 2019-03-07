@@ -1,5 +1,7 @@
 'use strict';
 
+// Things that can be done
+
 var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
 
 var table = document.getElementById('table');
@@ -65,14 +67,6 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   }
 }
 
-//Creating the stores/objects
-
-var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
-var seatac = new Locations ('SeaTac', 3, 24, 1.2);
-var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
-var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
-
 // header
 
 function headerRow() {
@@ -119,18 +113,9 @@ function footerRow() {
   table.appendChild(trEl);
 }
 
-// table data
-
-headerRow();
-firstAndPike.render();
-seatac.render();
-seattleCenter.render();
-capitolHill.render();
-alkiBeach.render();
-footerRow();
-
 // form event listener
 
+var storeList = document.getElementById('newStoreList');
 var newStore = document.getElementById ('newStoreForm');
 
 function addStore(event) {
@@ -150,9 +135,47 @@ function addStore(event) {
 
     allStores.unshift(newLocation);
     newLocation.render();
+    // renderAllStores();
 }
 
 newStore.addEventListener('submit', addStore);
+
+// create for loop where if array length is greater than 5, it will run the add store function
+
+function createStore() {
+  for(var i = 0; i < allStores.length; i++) { 
+    allStores[i].render();
+  }
+}
+
+// Do the things
+
+//Creating the stores/objects
+
+var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
+var seatac = new Locations ('SeaTac', 3, 24, 1.2);
+var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
+var capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
+var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
+
+// table data
+
+headerRow();
+createStore();
+// firstAndPike.render();
+// seatac.render();
+// seattleCenter.render();
+// capitolHill.render();
+// alkiBeach.render();
+// createStore();
+footerRow();
+
+// function renderAllStores() {
+//   storeList.innerHTML = '';
+//   for(var i = 0; i < allStores.length; i++) {
+//     storeList.appendChild(allStores[i].render());
+//   }
+// }
 
 
 
