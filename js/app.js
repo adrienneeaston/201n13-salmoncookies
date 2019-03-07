@@ -133,9 +133,17 @@ function addStore(event) {
     event.target.maxCustFs.value = null;
     event.target.avrCookiesFs.value = null;
 
-    allStores.unshift(newLocation);
-    newLocation.render();
+    // allStores.unshift(newLocation);
+    // newLocation.render();
     // renderAllStores();
+
+    // table.removeChild(table.childNodes);
+
+    table.innerHTML = '';
+
+    headerRow();
+    createStore();
+    footerRow();
 }
 
 newStore.addEventListener('submit', addStore);
@@ -162,6 +170,7 @@ var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
 
 headerRow();
 createStore();
+console.log(allStores.length);
 // firstAndPike.render();
 // seatac.render();
 // seattleCenter.render();
