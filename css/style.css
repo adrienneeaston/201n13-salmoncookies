@@ -1,7 +1,45 @@
 body {
+  width: 100%;
+  margin: auto;
   background-color: peachpuff;
 }
 
+header {
+  height: 100px;
+  background-color: rgb(247, 156, 76);
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+}
+
+main {
+  width: 960px;
+  margin: 0 auto;
+}
+
+footer {
+  height: 100px;
+  background-color: rgb(247, 156, 76);
+  clear: both;
+}
+
+li {
+  width: 960px;
+  float: left;
+}
+
 h1 {
-  background-color: rgb(247, 156, 76)
+  font-size: 40px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 20px;
+}
+
+h4 {
+  font-size: 15px;
 }
