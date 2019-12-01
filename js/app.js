@@ -2,11 +2,11 @@
 
 // Things that can be done
 
-var hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
+let hours = ['6am', '7am', '8am', '9am', '10am', '11am', '12pm', '1pm', '2pm', '3pm', '4pm', '5pm', '6pm', '7pm', '8pm',];
 
-var table = document.getElementById('table');
+let table = document.getElementById('table');
 
-var allStores = []; // might be useful later
+let allStores = []; // might be useful later
 
 //Constructor function
 
@@ -21,13 +21,13 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
   allStores.push(this); // might be useful later
 
   this.cookies = function () {
-    var ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
-    var numCookies = Math.ceil(ranNum * this.avrNumCookies);
+    let ranNum = Math.floor((Math.random() * (this.maxCust - this.minCust + 1)) + this.minCust);
+    let numCookies = Math.ceil(ranNum * this.avrNumCookies);
     return numCookies;
   }
 
   this.makeArray = function() {
-    for(var i = 0; i < hours.length; i++) {
+    for(let i = 0; i < hours.length; i++) {
       this.totalArray.push(this.cookies());
       this.counter += this.totalArray[i];
     }
@@ -44,22 +44,22 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
 
     // store name on table at start of row
    
-    var trEl = document.createElement('tr');
-    var tdEl = document.createElement('td');
+    let trEl = document.createElement('tr');
+    let tdEl = document.createElement('td');
     tdEl.innerHTML = this.store;
     trEl.appendChild(tdEl);
   
     // put data on table for each hour
 
-    for(var j = 0; j < hours.length; j++) {
-      var tdEl = document.createElement('td');
+    for(let j = 0; j < hours.length; j++) {
+      let tdEl = document.createElement('td');
       tdEl.innerHTML = this.totalArray[j];
       trEl.appendChild(tdEl);  
     }
 
     // put the total cookies per day on the table
 
-    var tdEl = document.createElement('td');
+    let tdEl = document.createElement('td');
     tdEl.innerHTML = this.counter;
     trEl.appendChild(tdEl);
     
@@ -70,18 +70,18 @@ function Locations (store, minCust, maxCust, avrNumCookies) {
 // header
 
 function headerRow() {
-  var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
+  let trEl = document.createElement('tr');
+  let tdEl = document.createElement('td');
   tdEl.textContent = "Locations";
   trEl.appendChild(tdEl);
 
-  for(var i = 0; i < hours.length; i++) {
-  var tdEl = document.createElement('td');
+  for(let i = 0; i < hours.length; i++) {
+  let tdEl = document.createElement('td');
   tdEl.innerHTML = hours[i];
   trEl.appendChild(tdEl);
   }
 
-  var tdEl = document.createElement('td'); 
+  let tdEl = document.createElement('td'); 
   tdEl.textContent = "Total Cookies Per Day";
   trEl.appendChild(tdEl);
 
@@ -91,15 +91,15 @@ function headerRow() {
 // footer row
 
 function footerRow() {
-  var trEl = document.createElement('tr');
-  var tdEl = document.createElement('td');
+  let trEl = document.createElement('tr');
+  let tdEl = document.createElement('td');
   tdEl.textContent = 'Hourly Totals';
   trEl.appendChild(tdEl);
-  var counterHourly = 0;
-  var counterDaily = 0;
-  for (var i = 0; i < hours.length; i++) {
+  let counterHourly = 0;
+  let counterDaily = 0;
+  for (let i = 0; i < hours.length; i++) {
     counterHourly = 0;
-    for (var j = 0; j < allStores.length; j++) {
+    for (let j = 0; j < allStores.length; j++) {
       counterHourly += allStores[j].totalArray[i];
       counterDaily += allStores[j].totalArray[i];
     }
@@ -115,18 +115,18 @@ function footerRow() {
 
 // form event listener
 
-var storeList = document.getElementById('newStoreList');
-var newStore = document.getElementById ('newStoreForm');
+let storeList = document.getElementById('newStoreList');
+let newStore = document.getElementById ('newStoreForm');
 
 function addStore(event) {
     event.preventDefault();
     console.log(event.target.locationFs.value);
-    var locationNew = event.target.locationFs.value;
-    var minCustNew = event.target.minCustFs.value;
-    var maxCustNew = event.target.maxCustFs.value;
-    var avrCookiesNew = event.target.avrCookiesFs.value;
+    let locationNew = event.target.locationFs.value;
+    let minCustNew = event.target.minCustFs.value;
+    let maxCustNew = event.target.maxCustFs.value;
+    let avrCookiesNew = event.target.avrCookiesFs.value;
 
-    var newLocation = new Locations(locationNew, minCustNew, maxCustNew, avrCookiesNew);
+    let newLocation = new Locations(locationNew, minCustNew, maxCustNew, avrCookiesNew);
 
     event.target.locationFs.value = null;
     event.target.minCustFs.value = null;
@@ -145,7 +145,7 @@ newStore.addEventListener('submit', addStore);
 // create for loop where if array length is greater than 5, it will run the add store function
 
 function createStore() {
-  for(var i = 0; i < allStores.length; i++) { 
+  for(let i = 0; i < allStores.length; i++) { 
     allStores[i].render();
   }
 }
@@ -154,11 +154,11 @@ function createStore() {
 
 //Creating the stores/objects
 
-var firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
-var seatac = new Locations ('SeaTac', 3, 24, 1.2);
-var seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
-var capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
-var alkiBeach = new Locations ('Alki', 2, 16, 4.6);
+let firstAndPike = new Locations ('First and Pike', 23, 65, 6.3);
+let seatac = new Locations ('SeaTac', 3, 24, 1.2);
+let seattleCenter = new Locations ('Seattle Center', 11, 38, 3.7);
+let capitolHill = new Locations ('Capitol Hill', 20, 38, 2.3);
+let alkiBeach = new Locations ('Alki', 2, 16, 4.6);
 
 // table data
 
@@ -175,7 +175,7 @@ footerRow();
 
 // function renderAllStores() {
 //   storeList.innerHTML = '';
-//   for(var i = 0; i < allStores.length; i++) {
+//   for(let i = 0; i < allStores.length; i++) {
 //     storeList.appendChild(allStores[i].render());
 //   }
 // }
