@@ -2,7 +2,6 @@ body {
   width: 100%;
   margin: auto;
   background-color: peachpuff;
-  float: left;
 }
 
 header {
@@ -25,8 +24,8 @@ footer {
 }
 
 li {
+
   width: 960px;
-  float: left;
 }
 
 h1 {
@@ -43,4 +42,9 @@ h3 {
 
 h4 {
   font-size: 15px;
+}
+
+main img {
+  float: left;
+  display: inline-block;
 }
