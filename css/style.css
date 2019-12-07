@@ -24,8 +24,12 @@ footer {
 }
 
 li {
-
   width: 960px;
+}
+
+main img {
+  float: left;
+  display: inline-block;
 }
 
 h1 {
@@ -37,14 +41,12 @@ h2 {
 }
 
 h3 {
+  clear: both;
   font-size: 20px;
 }
 
 h4 {
+  clear: both;
   font-size: 15px;
 }
 
-main img {
-  float: left;
-  display: inline-block;
-}
